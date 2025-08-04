@@ -3,7 +3,6 @@ import {
   validateForm,
   isValidEmail,
   isValidPhone,
-  AppError,
   handleApiError,
 } from "@/lib/utils";
 
