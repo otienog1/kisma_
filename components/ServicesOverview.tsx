@@ -47,9 +47,9 @@ const ServicesOverview = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    {/* <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Our <span className="text-gradient">Services</span>
-                    </h2>
+                    </h2> */}
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                         We specialize in tailor-making your perfect African adventure,
                         ensuring every detail matches your tastes and budget.
@@ -57,62 +57,7 @@ const ServicesOverview = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                    {services.map((service, index) => (
-                        <div
-                            key={service.id}
-                            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
-                        >
-                            <div className="md:flex">
-                                {/* Image */}
-                                <div className="md:w-1/2 relative">
-                                    <img
-                                        src={service.image}
-                                        alt={service.title}
-                                        className="w-full h-64 md:h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    {service.popular && (
-                                        <div className="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                                            Most Popular
-                                        </div>
-                                    )}
-                                </div>
 
-                                {/* Content */}
-                                <div className="md:w-1/2 p-8">
-                                    <div className="text-amber-600 mb-4 group-hover:scale-110 transition-transform duration-300">
-                                        {service.icon}
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-amber-600 transition-colors">
-                                        {service.title}
-                                    </h3>
-                                    <p className="text-gray-600 mb-6 leading-relaxed">
-                                        {service.description}
-                                    </p>
-
-                                    {/* Features */}
-                                    <ul className="space-y-3 mb-6">
-                                        {service.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-center text-sm text-gray-600">
-                                                <CheckCircle className="w-4 h-4 text-amber-600 mr-3 flex-shrink-0" />
-                                                <span>{feature}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    {/* Learn More Link */}
-                                    <Link
-                                        href={`/services/${service.id}`}
-                                        className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold group/link"
-                                    >
-                                        <span>Learn More</span>
-                                        <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
 
                 {/* Additional Services */}
                 <div className="bg-white rounded-2xl p-8 shadow-lg">

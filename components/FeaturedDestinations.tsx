@@ -70,7 +70,7 @@ const FeaturedDestinations = () => {
                         <Link
                             key={destination.id}
                             href={`/destinations/${destination.id}`}
-                            className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl card-hover"
+                            className="group relative overflow-hidden  shadow-xl hover:shadow-2xl card-hover"
                         >
                             <div className="relative">
                                 <img
@@ -81,13 +81,13 @@ const FeaturedDestinations = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                                 {/* Rating Badge */}
-                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center space-x-1">
+                                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1  flex items-center space-x-1">
                                     <Star className="w-4 h-4 text-amber-400 fill-current" />
                                     <span className="text-sm font-semibold text-gray-900">{destination.rating}</span>
                                 </div>
 
                                 {/* Price Badge */}
-                                <div className="absolute top-4 left-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full">
+                                <div className="absolute top-4 left-4 bg-amber-600/90 backdrop-blur-sm text-white px-3 py-1 ">
                                     <span className="text-sm font-semibold">{destination.price}</span>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@ const FeaturedDestinations = () => {
                                     {destination.highlights.map((highlight, idx) => (
                                         <span
                                             key={idx}
-                                            className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full border border-white/30"
+                                            className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1  border border-white/30"
                                         >
                                             {highlight}
                                         </span>
@@ -135,7 +135,7 @@ const FeaturedDestinations = () => {
                 <div className="text-center">
                     <Link
                         href="/destinations"
-                        className="inline-flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
+                        className="inline-flex items-center space-x-2 bg-gray-900 hover:bg-gray-800 text-white px-8 py-4  font-semibold transition-all duration-300 transform hover:scale-105"
                     >
                         <span>View All Destinations</span>
                         <ArrowRight className="w-5 h-5" />
