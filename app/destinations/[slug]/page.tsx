@@ -125,11 +125,12 @@ const destinationsData = {
 }
 
 type Props = {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const destination = destinationsData[params.slug as keyof typeof destinationsData]
+    const { slug } = await params
+    const destination = destinationsData[slug as keyof typeof destinationsData]
 
     if (!destination) {
         return {
@@ -144,8 +145,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     }
 }
 
-export default function DestinationPage({ params }: Props) {
-    const destination = destinationsData[params.slug as keyof typeof destinationsData]
+export default async function DestinationPage({ params }: Props) {
+    const { slug } = await params
+    const destination = destinationsData[slug as keyof typeof destinationsData]
 
     if (!destination) {
         notFound()
