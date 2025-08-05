@@ -6,12 +6,12 @@ const HomePageSection: React.FC = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Hero Section */}
                 <div className="flex flex-col lg:flex-row items-start lg:space-x-12 mb-16">
-                    <div className="lg:w-1/2">
+                    <div className="lg:w-1/3">
                         <p className="text-amber-600 uppercase text-sm font-semibold tracking-wider mb-2">
                             Explore Our Africa
                         </p>
                         <h2 className="text-4xl font-light text-gray-900 leading-tight mb-6">
-                            Embark on a Kisima safari—authentic, enriching, and deeply connected to Africa.
+                            Embark on a safari — authentic, enriching, and deeply connected to Africa.
                         </h2>
                         <p className="text-lg text-gray-700 mb-6">
                             Embark on an unforgettable East African safari where authentic adventure meets personalized comfort—crafted with care and local expertise.
@@ -23,7 +23,7 @@ const HomePageSection: React.FC = () => {
                             INQUIRE NOW
                         </button>
                     </div>
-                    <div className="lg:w-1/2 mt-12 lg:mt-0 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="lg:w-2/3 mt-12 lg:mt-0 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div>
                             <div className="relative h-64 md:h-80 overflow-hidden  mb-4">
                                 <img

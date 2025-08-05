@@ -11,7 +11,7 @@ import CTASection from '@/components/CTASection'
 
 export default function Home() {
     return (
-        <div className="min-h-screen pt-28">
+        <div className="min-h-screen pt-20">
             <Hero />
             <IntroSection />
             <ImageSection />

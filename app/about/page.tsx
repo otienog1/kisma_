@@ -3,17 +3,17 @@ import Image from 'next/image'
 import { Award, Users, Globe, Heart, Shield, Star, Leaf, Camera } from 'lucide-react'
 
 export const metadata: Metadata = {
-    title: 'About Us | Kisima Safaris',
-    description: 'Learn about Kisima Safaris - Kenya\'s premier safari company with over 15 years of experience in creating unforgettable African adventures with sustainable tourism practices.',
-    keywords: 'about Kisima Safaris, Kenya safari company, sustainable tourism, African adventures, safari experts',
+    title: 'About Us | Kisima Tours and Safaris',
+    description: 'Learn about Kisima Tours and Safaris - a trusted adventure management company established in 2002, specializing in tailor-made safari programs and authentic African experiences.',
+    keywords: 'about Kisima Tours and Safaris, Kenya safari company, KATO member, adventure management, tailor-made safaris',
 }
 
 const AboutPage = () => {
     const stats = [
-        { number: "15+", label: "Years of Experience", icon: <Award className="w-6 h-6" /> },
-        { number: "1000+", label: "Happy Travelers", icon: <Users className="w-6 h-6" /> },
-        { number: "50+", label: "Destinations Covered", icon: <Globe className="w-6 h-6" /> },
-        { number: "98%", label: "Customer Satisfaction", icon: <Heart className="w-6 h-6" /> }
+        { number: "22+", label: "Years of Experience", icon: <Award className="w-6 h-6" /> },
+        { number: "KATO", label: "Member Since 2006", icon: <Shield className="w-6 h-6" /> },
+        { number: "100%", label: "Personalized Service", icon: <Users className="w-6 h-6" /> },
+        { number: "Licensed", label: "Tourism & Wildlife", icon: <Heart className="w-6 h-6" /> }
     ]
 
     const values = [
@@ -72,34 +72,34 @@ const AboutPage = () => {
 
     const milestones = [
         {
-            year: "2009",
-            title: "Kisima Safaris Founded",
-            description: "Started with a dream to share Africa's magic with the world while supporting local communities."
+            year: "2002",
+            title: "Kisima Tours and Safaris Established",
+            description: "Founded by seasoned travel professionals with a passion for Africa's iconic landscapes and authentic experiences."
         },
         {
-            year: "2012",
-            title: "First Kilimanjaro Expedition",
-            description: "Expanded services to include mountain climbing adventures on Africa's highest peak."
+            year: "2006",
+            title: "Official Incorporation & KATO Membership",
+            description: "Officially incorporated and became proud members of the Kenya Association of Tour Operators (KATO)."
+        },
+        {
+            year: "2010",
+            title: "Ministry Registration",
+            description: "Fully registered with the Ministry of Tourism and Wildlife, ensuring compliance with all regulatory standards."
         },
         {
             year: "2015",
-            title: "Sustainability Certification",
-            description: "Received recognition for our commitment to sustainable and responsible tourism practices."
+            title: "Kenya Tourism Federation Member",
+            description: "Joined the Kenya Tourism Federation, further cementing our commitment to industry excellence."
         },
         {
-            year: "2018",
-            title: "1000th Happy Traveler",
-            description: "Celebrated serving over 1000 satisfied customers from around the world."
-        },
-        {
-            year: "2021",
-            title: "COVID-19 Recovery",
-            description: "Adapted operations to ensure safe travel while supporting local communities during challenging times."
+            year: "2020",
+            title: "Expanded Service Portfolio",
+            description: "Diversified to include team-building activities, conference arrangements, and special interest tours."
         },
         {
             year: "2024",
-            title: "Digital Innovation",
-            description: "Launched modern digital platforms to enhance customer experience and accessibility."
+            title: "Digital Transformation",
+            description: "Launched modern digital platforms to enhance customer experience while maintaining our personalized service approach."
         }
     ]
 
@@ -119,12 +119,15 @@ const AboutPage = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div>
                             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                                About <span className="text-amber-400">Kisima Safaris</span>
+                                About <span className="text-amber-400">Kisima Tours and Safaris</span>
                             </h1>
                             <p className="text-xl text-gray-300 leading-relaxed mb-8">
-                                For over 15 years, we've been creating unforgettable African adventures while
-                                practicing sustainable tourism that benefits both travelers and local communities.
+                                A trusted adventure management company owned and operated by seasoned travel professionals.
+                                Since 2002, we've combined our passion for exploration with Africa's most iconic landscapes
+                                to create unforgettable safari experiences.
                             </p>
+                        </div>
+                        <div className="relative">
                             <div className="grid grid-cols-2 gap-6">
                                 {stats.map((stat, index) => (
                                     <div key={index} className="text-center">
@@ -136,13 +139,11 @@ const AboutPage = () => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-                        <div className="relative">
-                            <img
-                                src="https://images.unsplash.com/photo-1549366021-9f761d040a94?w=600&q=80"
+                            {/* <img
+                                src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1600&q=80"
                                 alt="African landscape"
                                 className="rounded-2xl shadow-2xl"
-                            />
+                            /> */}
                         </div>
                     </div>
                 </div>
@@ -158,21 +159,23 @@ const AboutPage = () => {
                             </h2>
                             <div className="space-y-6 text-gray-600 leading-relaxed">
                                 <p>
-                                    Kisima Safaris was born from a deep love for Africa and a desire to share its incredible
-                                    beauty with the world. Founded in 2009 by John Kamau, a passionate conservationist and
-                                    tourism expert, our company started with a simple mission: to create authentic African
-                                    experiences while supporting local communities and wildlife conservation.
+                                    Kisima Tours and Safaris is a trusted adventure management company owned and operated by seasoned travel professionals.
+                                    Established in 2002 and incorporated in 2006, we've combined our passion for exploration with Africa's most iconic
+                                    landscapes to create unforgettable safari experiences.
                                 </p>
                                 <p>
-                                    The name "Kisima" means "well" in Swahili, representing our role as a source of
-                                    life-changing experiences and sustainable tourism practices. Just as a well provides
-                                    essential water to a community, we aim to be an essential source of authentic African
-                                    adventures that nourish the soul and create lasting positive impacts.
+                                    We specialize in crafting tailor-made safari programs, incentive trips, special interest tours, team-building activities,
+                                    and conference arrangements. Every itinerary is personalized to meet your specific needs—because who you travel with
+                                    matters just as much as where you go.
                                 </p>
                                 <p>
-                                    Over the years, we've grown from a small local operation to Kenya's premier safari
-                                    company, but we've never lost sight of our core values: excellence, sustainability,
-                                    and genuine care for both our travelers and the communities we serve.
+                                    Kisima is fully registered with the Ministry of Tourism and Wildlife, and we are proud members of the Kenya Association
+                                    of Tour Operators (KATO) and the Kenya Tourism Federation. We operate with integrity and uphold high ethical standards
+                                    in all our services.
+                                </p>
+                                <p>
+                                    When you choose Kisima, you're partnering with professionals committed to delivering a seamless, elegant, and truly
+                                    African safari adventure—one that stays with you for a lifetime.
                                 </p>
                             </div>
                         </div>
@@ -183,7 +186,7 @@ const AboutPage = () => {
                                 className="rounded-2xl shadow-xl"
                             />
                             <div className="absolute -bottom-6 -right-6 bg-amber-600 text-white p-6 rounded-xl shadow-lg">
-                                <div className="text-2xl font-bold">15+</div>
+                                <div className="text-2xl font-bold">22+</div>
                                 <div className="text-sm">Years of Excellence</div>
                             </div>
                         </div>
@@ -224,50 +227,64 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Our Team */}
+            {/* Meet Our Owner */}
             <section className="py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                            Meet Our <span className="text-gradient">Team</span>
+                            Meet Our <span className="text-gradient">Owner</span>
                         </h2>
                         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            Our passionate team of safari experts, guides, and adventure specialists are here to make your African dreams come true
+                            The visionary leader behind Kisima Tours and Safaris
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {team.map((member, index) => (
-                            <div
-                                key={index}
-                                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group card-hover"
-                            >
-                                <div className="relative">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=600&q=80"
+                                alt="Hanna Ng'ang'a"
+                                className="shadow-xl w-full max-w-sm mx-auto"
+                            />
+                            <div className="absolute -bottom-6 -right-6 bg-amber-600 text-white p-4 rounded-xl shadow-lg">
+                                <div className="text-lg font-bold">Owner & CEO</div>
+                                <div className="text-sm opacity-90">Since 2002</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="text-3xl font-bold text-gray-900 mb-4">Hanna Ng'ang'a</h3>
+                            <p className="text-xl text-amber-600 font-semibold mb-6">Founder, Owner & CEO</p>
+
+                            <div className="space-y-6 text-gray-600 leading-relaxed">
+                                <p>
+                                    Hanna Ng'ang'a is the visionary founder and owner of Kisima Tours and Safaris. With over two decades
+                                    of experience in the tourism industry, she has built the company from the ground up, establishing it
+                                    as one of Kenya's most trusted adventure management companies.
+                                </p>
+                                <p>
+                                    Her passion for Africa's landscapes and wildlife, combined with her commitment to authentic experiences,
+                                    has shaped Kisima's reputation for delivering personalized, elegant safari adventures. Under her leadership,
+                                    the company has maintained its core values of integrity, excellence, and genuine care for both travelers
+                                    and local communities.
+                                </p>
+                                <p>
+                                    Hanna's dedication to sustainable tourism practices and her deep understanding of Kenya's diverse ecosystems
+                                    ensure that every safari experience creates lasting memories while supporting conservation efforts and
+                                    local communities.
+                                </p>
+                            </div>
+
+                            <div className="mt-8 grid grid-cols-2 gap-6">
+                                <div className="bg-gray-50 p-4 rounded-xl">
+                                    <div className="text-2xl font-bold text-amber-600">22+</div>
+                                    <div className="text-sm text-gray-600">Years of Leadership</div>
                                 </div>
-
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                                    <p className="text-amber-600 font-semibold mb-3">{member.role}</p>
-                                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
-
-                                    <div className="space-y-1">
-                                        <h4 className="text-sm font-semibold text-gray-900">Specialties:</h4>
-                                        {member.specialties.map((specialty, idx) => (
-                                            <div key={idx} className="text-xs text-gray-500 flex items-center">
-                                                <div className="w-1 h-1 bg-amber-600 rounded-full mr-2"></div>
-                                                {specialty}
-                                            </div>
-                                        ))}
-                                    </div>
+                                <div className="bg-gray-50 p-4 rounded-xl">
+                                    <div className="text-2xl font-bold text-amber-600">100%</div>
+                                    <div className="text-sm text-gray-600">Commitment to Excellence</div>
                                 </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </section>
