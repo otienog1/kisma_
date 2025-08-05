@@ -74,7 +74,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     // Inline variant (for homepage, etc.)
     if (variant === 'inline') {
         return (
-            <div className={cn('bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-white', className)}>
+            <div className='bg-gradient-to-r from-amber-600 to-orange-600 rounded-2xl p-8 text-white'>
                 <div className="max-w-4xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                         <div>
