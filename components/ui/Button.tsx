@@ -16,7 +16,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode
 }
 
-interface LinkButtonProps extends Omit<ButtonProps, 'onClick' | 'type'> {
+interface LinkButtonProps extends Omit<ButtonProps, 'onClick' | 'type' | 'disabled' | 'loading'> {
     href: string
     external?: boolean
 }
@@ -100,7 +100,6 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className={combinedClasses}
-                {...props}
             >
                 {leftIcon && <span className="mr-2">{leftIcon}</span>}
                 <span>{children}</span>
@@ -110,7 +109,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
     }
 
     return (
-        <Link href={href} className={combinedClasses} {...props}>
+        <Link href={href} className={combinedClasses}>
             {leftIcon && <span className="mr-2">{leftIcon}</span>}
             <span>{children}</span>
             {rightIcon && <span className="ml-2">{rightIcon}</span>}
