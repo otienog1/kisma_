@@ -158,7 +158,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     // Footer variant
     if (variant === 'footer') {
         return (
-            <div className={cn('', className)}>
+            <div>
                 <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="mb-4 md:mb-0">
                         <h4 className="text-lg font-semibold mb-2">Stay Updated</h4>
@@ -190,10 +190,9 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
                 {/* Status Messages */}
                 {message && (
-                    <div className={cn(
+                    <div className={`
                         'mt-3 flex items-center space-x-2 text-sm',
-                        status === 'success' ? 'text-green-400' : 'text-red-400'
-                    )}>
+                        ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
                         {status === 'success' ? (
                             <CheckCircle className="w-4 h-4" />
                         ) : (
@@ -209,7 +208,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
     // Modal variant
     if (variant === 'modal') {
         return (
-            <div className={cn('bg-white p-8 rounded-2xl', className)}>
+            <div className='bg-white p-8 rounded-2xl'>
                 <div className="text-center mb-6">
                     <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Gift className="w-8 h-8 text-amber-600" />
@@ -294,7 +293,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
     // Sidebar variant
     return (
-        <div className={cn('bg-amber-50 p-6 rounded-xl border border-amber-200', className)}>
+        <div className='bg-amber-50 p-6 rounded-xl border border-amber-200'>
             <div className="text-center mb-4">
                 <Mail className="w-8 h-8 text-amber-600 mx-auto mb-3" />
                 <h4 className="font-bold text-gray-900 mb-2">Safari Newsletter</h4>
@@ -322,10 +321,9 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 </button>
 
                 {message && (
-                    <div className={cn(
-                        'text-xs p-2 rounded',
-                        status === 'success' ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'
-                    )}>
+                    <div className={`'text-xs p-2 rounded',
+                        ${status === 'success' ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}
+                    `}>
                         {message}
                     </div>
                 )}
