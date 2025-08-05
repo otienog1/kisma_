@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { cn } from '@/lib/utils'
 
 type TooltipPosition = 'top' | 'bottom' | 'left' | 'right'
 
@@ -125,12 +124,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     const tooltip = isVisible ? (
         <div
             ref={tooltipRef}
-            className={cn(
-                'fixed z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-lg pointer-events-none',
-                'animate-in fade-in-0 zoom-in-95 duration-200',
-                positionClasses[position],
-                contentClassName
-            )}
+            className={`fixed z-50 px-3 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-lg pointer-events-none animate-in fade-in-0 zoom-in-95 duration-200 ${positionClasses[position]} ${contentClassName}`}
             style={{
                 left: tooltipPosition.x,
                 top: tooltipPosition.y
@@ -139,10 +133,7 @@ const Tooltip: React.FC<TooltipProps> = ({
             {content}
             {/* Arrow */}
             <div
-                className={cn(
-                    'absolute w-0 h-0 border-4',
-                    arrowClasses[position]
-                )}
+                className={`absolute w-0 h-0 border-4 ${arrowClasses[position]}`}
             />
         </div>
     ) : null
@@ -151,7 +142,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         <>
             <div
                 ref={triggerRef}
-                className={cn('inline-block', className)}
+                className={`inline-block ${className}`}
                 onMouseEnter={showTooltip}
                 onMouseLeave={hideTooltip}
                 onFocus={showTooltip}
@@ -203,7 +194,7 @@ export const IconTooltip: React.FC<IconTooltipProps> = ({
 }) => {
     return (
         <Tooltip content={tooltip} position={position} className={className}>
-            <div className={cn('cursor-help', iconClassName)}>
+            <div className={`cursor-help ${iconClassName}`}>
                 {icon}
             </div>
         </Tooltip>

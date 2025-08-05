@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
-import { cn } from '@/lib/utils'
 
 interface ModalProps {
     isOpen: boolean
@@ -124,22 +123,12 @@ const Modal: React.FC<ModalProps> = ({
 
     const modalContent = (
         <div
-            className={cn(
-                'fixed inset-0 z-50 flex items-center justify-center p-4',
-                'bg-black bg-opacity-50 backdrop-blur-sm',
-                overlayClassName
-            )}
+            className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm',${overlayClassName}`}
             onClick={handleOverlayClick}
         >
             <div
                 ref={modalRef}
-                className={cn(
-                    'relative bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden',
-                    'transform transition-all duration-300 scale-100',
-                    sizeClasses[size],
-                    'animate-in fade-in-0 zoom-in-95 duration-300',
-                    className
-                )}
+                className={`relative bg-white rounded-2xl shadow-2xl max-h-[90vh] overflow-hidden transform transition-all duration-300 scale-100 ${sizeClasses[size]} animate-in fade-in-0 zoom-in-95 duration-300 ${className}`}
                 role="dialog"
                 aria-modal="true"
                 aria-labelledby={title ? 'modal-title' : undefined}
@@ -186,7 +175,7 @@ interface ModalHeaderProps {
 
 export const ModalHeader: React.FC<ModalHeaderProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4 border-b border-gray-200', className)}>
+        <div className={`px-6 py-4 border-b border-gray-200 ${className}`}>
             {children}
         </div>
     )
@@ -200,7 +189,7 @@ interface ModalBodyProps {
 
 export const ModalBody: React.FC<ModalBodyProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4', className)}>
+        <div className={`px-6 py-4 ${className}`}>
             {children}
         </div>
     )
@@ -214,7 +203,7 @@ interface ModalFooterProps {
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4 border-t border-gray-200 flex justify-end space-x-3', className)}>
+        <div className={`px-6 py-4 border-t border-gray-200 flex justify-end space-x-3 ${className}`}>
             {children}
         </div>
     )
@@ -281,10 +270,7 @@ export const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
                 <button
                     onClick={onConfirm}
                     disabled={loading}
-                    className={cn(
-                        'px-4 py-2 rounded-lg transition-colors disabled:opacity-50',
-                        style.confirmButtonClass
-                    )}
+                    className={`px-4 py-2 rounded-lg transition-colors disabled:opacity-50 ${style.confirmButtonClass}`}
                 >
                     {loading ? 'Processing...' : confirmText}
                 </button>

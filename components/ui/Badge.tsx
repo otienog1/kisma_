@@ -1,5 +1,4 @@
 import React from 'react'
-import { cn } from '@/lib/utils'
 
 type BadgeVariant = 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'info'
 type BadgeSize = 'sm' | 'md' | 'lg'
@@ -40,12 +39,7 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
     return (
         <span
-            className={cn(
-                'inline-flex items-center font-medium rounded-full border',
-                badgeVariants[variant],
-                badgeSizes[size],
-                className
-            )}
+            className={`inline-flex items-center font-medium rounded-full border ${badgeVariants[variant]} ${badgeSizes[size]}`}
         >
             {icon && <span className="mr-1">{icon}</span>}
             <span>{children}</span>

@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Search, MapPin, Calendar, Users, X } from 'lucide-react'
 import { destinations } from '@/lib/data'
-import { cn } from '@/lib/utils'
 
 interface SearchResult {
     id: string
@@ -196,7 +195,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
     }
 
     return (
-        <div ref={searchRef} className={cn('relative', className)}>
+        <div ref={searchRef} className='relative'>
             {/* Search Input */}
             <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -259,10 +258,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
                                     <Link
                                         key={result.id}
                                         href={result.url}
-                                        className={cn(
-                                            'block px-4 py-3 hover:bg-gray-50 transition-colors',
-                                            selectedIndex === index && 'bg-amber-50'
-                                        )}
+                                        className={`block px-4 py-3 hover:bg-gray-50 transition-colors ${selectedIndex === index && 'bg-amber-50'}`}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         <div className="flex items-start space-x-3">
@@ -276,10 +272,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
 
                                             <div className="flex-1 min-w-0">
                                                 <div className="flex items-center space-x-2 mb-1">
-                                                    <span className={cn(
-                                                        'inline-flex items-center px-2 py-1 rounded-full text-xs font-medium',
-                                                        getCategoryColor(result.category)
-                                                    )}>
+                                                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(result.category)}`}>
                                                         {getCategoryIcon(result.category)}
                                                         <span className="ml-1 capitalize">{result.category}</span>
                                                     </span>
@@ -385,7 +378,7 @@ export const AdvancedSearch: React.FC<AdvancedSearchProps> = ({
     }
 
     return (
-        <div className={cn('bg-white p-6 rounded-xl shadow-lg', className)}>
+        <div className='bg-white p-6 rounded-xl shadow-lg'>
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Find Your Perfect Safari</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

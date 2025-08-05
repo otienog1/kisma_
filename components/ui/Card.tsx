@@ -1,5 +1,4 @@
 import React from 'react'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 // Base Card Component
@@ -26,7 +25,7 @@ export const Card: React.FC<CardProps> = ({
 
     return (
         <Component
-            className={cn(baseClasses, hoverClasses, clickableClasses, className)}
+            className={`${baseClasses} ${hoverClasses} ${clickableClasses}`}
             onClick={onClick}
         >
             {children}
@@ -42,7 +41,7 @@ interface CardHeaderProps {
 
 export const CardHeader: React.FC<CardHeaderProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4 border-b border-gray-100', className)}>
+        <div className='px-6 py-4 border-b border-gray-100'>
             {children}
         </div>
     )
@@ -56,7 +55,7 @@ interface CardBodyProps {
 
 export const CardBody: React.FC<CardBodyProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4', className)}>
+        <div className={'px-6 py-4'}>
             {children}
         </div>
     )
@@ -70,7 +69,7 @@ interface CardFooterProps {
 
 export const CardFooter: React.FC<CardFooterProps> = ({ children, className }) => {
     return (
-        <div className={cn('px-6 py-4 border-t border-gray-100 bg-gray-50 rounded-b-xl', className)}>
+        <div className={'px-6 py-4 border-t border-gray-100 bg-gray-50 rounded-b-xl'}>
             {children}
         </div>
     )
@@ -104,7 +103,7 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({
 }) => {
     return (
         <Link href={href}>
-            <Card className={cn('overflow-hidden group cursor-pointer', className)} hover>
+            <Card className='overflow-hidden group cursor-pointer' hover>
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                     <img
@@ -187,7 +186,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
     return (
         <Link href={href}>
-            <Card className={cn('group cursor-pointer h-full', className)} hover>
+            <Card className='group cursor-pointer h-full' hover>
                 <CardBody className="h-full flex flex-col">
                     <div className="text-amber-600 mb-4 group-hover:scale-110 transition-transform duration-300">
                         {icon}
@@ -235,7 +234,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
     className
 }) => {
     return (
-        <Card className={cn('h-full', className)}>
+        <Card className='h-full'>
             <CardBody className="h-full flex flex-col">
                 {/* Rating */}
                 <div className="flex mb-4">
@@ -285,7 +284,7 @@ export const StatsCard: React.FC<StatsCardProps> = ({
     className
 }) => {
     return (
-        <Card className={cn('text-center group', className)} hover>
+        <Card className='text-center group' hover>
             <CardBody>
                 <div className="text-amber-600 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {icon}

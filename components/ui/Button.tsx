@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'next/link'
-import { cn } from '@/lib/utils'
 import { Loader2 } from 'lucide-react'
 
 // Button variant types
@@ -61,13 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
 
     return (
         <button
-            className={cn(
-                baseClasses,
-                variantClasses,
-                sizeClasses,
-                widthClasses,
-                className
-            )}
+            className={`${baseClasses} ${variantClasses} ${sizeClasses} ${widthClasses}`}
             disabled={disabled || loading}
             {...props}
         >
@@ -98,13 +91,7 @@ export const LinkButton: React.FC<LinkButtonProps> = ({
     const sizeClasses = buttonSizes[size]
     const widthClasses = fullWidth ? 'w-full' : ''
 
-    const combinedClasses = cn(
-        baseClasses,
-        variantClasses,
-        sizeClasses,
-        widthClasses,
-        className
-    )
+    const combinedClasses = `${baseClasses} ${variantClasses} ${sizeClasses} ${widthClasses}`
 
     if (external) {
         return (
@@ -158,12 +145,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
 
     return (
         <button
-            className={cn(
-                baseClasses,
-                variantClasses,
-                iconSizes[size],
-                className
-            )}
+            className={`${baseClasses} ${variantClasses} ${iconSizes[size]}`}
             {...props}
         >
             {icon}
@@ -189,7 +171,7 @@ export const ButtonGroup: React.FC<ButtonGroupProps> = ({
     }
 
     return (
-        <div className={cn(orientationClasses[orientation], className)}>
+        <div className={`${orientationClasses[orientation]}`}>
             {children}
         </div>
     )
@@ -216,11 +198,7 @@ export const FloatingActionButton: React.FC<FABProps> = ({
 
     return (
         <button
-            className={cn(
-                'w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 z-50',
-                positionClasses[position],
-                className
-            )}
+            className={`w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 z-50' ${positionClasses[position]}`}
             {...props}
         >
             {icon}
@@ -249,12 +227,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
 
     return (
         <Button
-            className={cn(
-                gradientClasses,
-                pulseClasses,
-                'text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300',
-                className
-            )}
+            className={`${gradientClasses} ${pulseClasses} 'text-white shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300'`}
             {...props}
         >
             {children}

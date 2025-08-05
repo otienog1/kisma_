@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react'
-import { cn } from '@/lib/utils'
 import { Eye, EyeOff, AlertCircle, CheckCircle, Search } from 'lucide-react'
 
 // Base Input Props
@@ -55,7 +54,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
     const paddingClasses = leftIcon ? 'pl-12' : rightIcon ? 'pr-12' : ''
 
     return (
-        <div className={cn(fullWidth ? 'w-full' : '', wrapperClassName)}>
+        <div className={`${fullWidth ? 'w-full' : ''}`}>
             {label && (
                 <label
                     htmlFor={inputId}
@@ -76,13 +75,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(({
                 <input
                     ref={ref}
                     id={inputId}
-                    className={cn(
-                        baseClasses,
-                        sizeClasses[size],
-                        stateClasses,
-                        paddingClasses,
-                        className
-                    )}
+                    className={`
+                        ${baseClasses}
+                        ${sizeClasses[size]}
+                        ${stateClasses}
+                        ${paddingClasses},
+                        ${className}
+                    `}
                     {...props}
                 />
 
@@ -180,7 +179,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(({
     ...props
 }, ref) => {
     const [searchValue, setSearchValue] = React.useState('')
-    const timeoutRef = React.useRef<NodeJS.Timeout>()
+    const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
 
     React.useEffect(() => {
         if (onSearch) {
@@ -254,14 +253,14 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
     const resizeClasses = resize ? 'resize-y' : 'resize-none'
 
     return (
-        <div className={cn(fullWidth ? 'w-full' : '', wrapperClassName)}>
+        <div className={`${fullWidth ? 'w-full' : ''}`}>
             {label && (
                 <label
                     htmlFor={textareaId}
                     className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                     {label}
-                    {required && <span className="text-red-500 ml-1">*</span>}
+                    {required && <span className="text-amber-500 ml-1">*</span>}
                 </label>
             )}
 
@@ -269,13 +268,13 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
                 ref={ref}
                 id={textareaId}
                 rows={rows}
-                className={cn(
-                    baseClasses,
-                    sizeClasses[size],
-                    stateClasses,
-                    resizeClasses,
-                    className
-                )}
+                className={`
+                    ${baseClasses}
+                    ${sizeClasses[size]}
+                    ${stateClasses}
+                    ${resizeClasses}
+                    ${className}`
+                }
                 {...props}
             />
 
@@ -343,26 +342,26 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(({
             : 'border-gray-300 focus:border-amber-500 focus:ring-amber-200 hover:border-gray-400'
 
     return (
-        <div className={cn(fullWidth ? 'w-full' : '', wrapperClassName)}>
+        <div className={`${fullWidth ? 'w-full' : ''}`}>
             {label && (
                 <label
                     htmlFor={selectId}
                     className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                     {label}
-                    {required && <span className="text-red-500 ml-1">*</span>}
+                    {required && <span className="text-amber-500 ml-1">*</span>}
                 </label>
             )}
 
             <select
                 ref={ref}
                 id={selectId}
-                className={cn(
-                    baseClasses,
-                    sizeClasses[size],
-                    stateClasses,
-                    className
-                )}
+                className={`
+                    ${baseClasses}
+                    ${sizeClasses[size]}
+                    ${stateClasses}
+                    ${className}
+                `}
                 {...props}
             >
                 {placeholder && (
@@ -432,10 +431,14 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({
         const newValue = Number(currentValue) + step
         const finalValue = max !== undefined ? Math.min(newValue, max) : newValue
 
-        if (onChange) {
-            onChange({ target: { value: finalValue } } as React.ChangeEvent<HTMLInputElement>)
+        if (onChange && ref && typeof ref !== 'function' && ref.current) {
+            const nativeInput = ref.current;
+            const event = Object.create(null);
+            Object.defineProperty(event, 'target', { value: nativeInput, writable: false });
+            nativeInput.value = String(finalValue);
+            onChange(event as React.ChangeEvent<HTMLInputElement>);
         } else {
-            setInternalValue(finalValue)
+            setInternalValue(finalValue);
         }
     }
 
@@ -444,9 +447,15 @@ export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({
         const finalValue = min !== undefined ? Math.max(newValue, min) : newValue
 
         if (onChange) {
-            onChange({ target: { value: finalValue } } as React.ChangeEvent<HTMLInputElement>)
+            const event = {
+                ...new Event('change'),
+                target: {
+                    value: finalValue,
+                },
+            } as unknown as React.ChangeEvent<HTMLInputElement>;
+            onChange(event);
         } else {
-            setInternalValue(finalValue)
+            setInternalValue(finalValue);
         }
     }
 

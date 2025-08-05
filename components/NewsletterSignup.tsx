@@ -190,9 +190,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
 
                 {/* Status Messages */}
                 {message && (
-                    <div className={`
-                        'mt-3 flex items-center space-x-2 text-sm',
-                        ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                    <div className={`mt-3 flex items-center space-x-2 text-sm' ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
                         {status === 'success' ? (
                             <CheckCircle className="w-4 h-4" />
                         ) : (
@@ -321,8 +319,7 @@ const NewsletterSignup: React.FC<NewsletterSignupProps> = ({
                 </button>
 
                 {message && (
-                    <div className={`'text-xs p-2 rounded',
-                        ${status === 'success' ? 'text-green-700 bg-green-100' : 'text-red-700 bg-red-100'}
+                    <div className={`text-xs p-2 rounded ${status === 'success' ? 'text-green-700 bg-green-100' : 'text-amber-700 bg-red-100'}
                     `}>
                         {message}
                     </div>
