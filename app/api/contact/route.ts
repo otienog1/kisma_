@@ -62,8 +62,12 @@ function validateContactForm(data: ContactFormData) {
     name: { required: true, minLength: 2, maxLength: 100 },
     email: { required: true, custom: isValidEmail },
     phone: { custom: (value: string) => !value || isValidPhone(value) },
-    serviceType: { required: true },
+    country: { custom: (value: string) => !value || value.trim().length >= 2 },
     travelers: { required: true },
+    serviceType: { required: true },
+    destination: { custom: (value: string) => !value || value.trim().length >= 2 },
+    travelDates: { custom: (value: string) => !value || value.trim().length >= 3 },
+    budget: { custom: (value: string) => !value || value.trim().length >= 1 },
     message: { required: true, minLength: 10, maxLength: 1000 },
   };
 

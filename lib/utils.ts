@@ -96,11 +96,20 @@ export function throttle<T extends (...args: any[]) => any>(
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
 
-  return function executedFunction(...args: Parameters<T>) {
-    if (!inThrottle) {
+  interface ThrottleState {
+    inThrottle: boolean;
+  }
+
+  return function executedFunction(
+    this: unknown,
+    ...args: Parameters<T>
+  ): void {
+    const state: ThrottleState = { inThrottle };
+    if (!state.inThrottle) {
       func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
+      state.inThrottle = true;
+      setTimeout(() => (state.inThrottle = false), limit);
+      inThrottle = state.inThrottle;
     }
   };
 }
@@ -312,7 +321,6 @@ export function handleApiError(error: unknown): {
 }
 
 export default {
-  cn,
   formatCurrency,
   formatDate,
   slugify,
