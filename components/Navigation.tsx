@@ -126,17 +126,15 @@ interface TopNavProps {
 const TopNav = ({ isScrolled }: TopNavProps) => {
     return (
         <div className={`hidden md:flex w-full bg-[#322215] transition-all duration-300 overflow-hidden ${isScrolled ? 'h-0 py-0' : 'h-auto py-2'}`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-full uppercase text-xs tracking-wider">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="flex justify-between items-center uppercase text-xs tracking-wider text-white">
                     {/* Phone Number */}
-                    <div className="flex items-center space-x-2 text-white">
-                        <div className='flex space-x-2'>
-                            <span>Get in touch —</span> <Mail className="w-4 h-4" /> <a href='mailto:info@kisimasafaris.com' className='underline lowercase'>info@kisimasafaris.com</a> <span>|</span> <Phone className="w-4 h-4" /> <span>+254 720 909 852</span>
-                        </div>
+                    <div className='flex items-center space-x-2'>
+                        <span>Get in touch —</span> <Mail className="w-4 h-4" /> <a href='mailto:info@kisimasafaris.com' className='underline lowercase'>info@kisimasafaris.com</a> <span>|</span> <Phone className="w-4 h-4" /> <span>+254 720 909 852</span>
                     </div>
 
                     {/* Social Media Icons */}
-                    <div className="flex items-center text-white space-x-4">
+                    <div className="flex items-center space-x-4">
                         <span>Socials: </span>
                         <a href="#" className="text-white hover:text-amber-400 transition-colors" aria-label="Facebook">
                             <Facebook className="w-4 h-4" />
