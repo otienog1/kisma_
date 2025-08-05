@@ -41,13 +41,13 @@ const ContactPage = () => {
         {
             icon: <Phone className="w-6 h-6" />,
             title: "Phone",
-            details: ["+254 (0) 721 123 456", "+254 (0) 734 567 890"],
+            details: ["+254 720 909852"],
             description: "Call us for immediate assistance"
         },
         {
             icon: <Mail className="w-6 h-6" />,
             title: "Email",
-            details: ["info@kisimasafaris.com", "bookings@kisimasafaris.com"],
+            details: ["info@kisimasafaris.com"],
             description: "Send us your detailed inquiry"
         },
         {
@@ -181,17 +181,11 @@ const ContactPage = () => {
                             <div className="mt-8">
                                 <h3 className="font-bold text-gray-900 mb-4">Follow Us</h3>
                                 <div className="flex space-x-4">
-                                    <a href="#" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
+                                    <a href="https://www.facebook.com/Kisimasafaris/" target="_blank" rel="noopener noreferrer" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
                                         <Facebook className="w-5 h-5" />
                                     </a>
-                                    <a href="#" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
-                                        <Instagram className="w-5 h-5" />
-                                    </a>
-                                    <a href="#" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
+                                    <a href="https://twitter.com/kisimasafaris" target="_blank" rel="noopener noreferrer" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
                                         <Twitter className="w-5 h-5" />
-                                    </a>
-                                    <a href="#" className="bg-amber-600 hover:bg-amber-700 p-3 rounded-full text-white transition-colors">
-                                        <Linkedin className="w-5 h-5" />
                                     </a>
                                 </div>
                             </div>
@@ -201,7 +195,7 @@ const ContactPage = () => {
                                 <h3 className="font-bold text-gray-900 mb-2">Quick Response Guarantee</h3>
                                 <p className="text-sm text-gray-600">
                                     We respond to all inquiries within 24 hours. For urgent matters,
-                                    please call us directly at +254 (0) 721 123 456.
+                                    please call us directly at +254 720 909852.
                                 </p>
                             </div>
                         </div>
