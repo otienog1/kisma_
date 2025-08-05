@@ -14,7 +14,7 @@ const HomePageSection: React.FC = () => {
                             Embark on a safari — authentic, enriching, and deeply connected to Africa.
                         </h2>
                         <p className="text-lg text-gray-700 mb-6">
-                            Embark on an unforgettable East African safari where authentic adventure meets personalized comfort—crafted with care and local expertise.
+                            Embark on an unforgettable East African safari where authentic adventure meets personalized comfort — crafted with care and local expertise.
                         </p>
                         <p className="text-lg text-gray-700 mb-8">
                             Venture into Kenya’s wild heart with seasoned guides who know the land intimately, and experience Africa the Kisima way.

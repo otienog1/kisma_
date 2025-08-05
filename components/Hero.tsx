@@ -10,7 +10,7 @@ const Hero = () => {
 
     const heroSlides = [
         {
-            image: "https://images.unsplash.com/photo-1549366021-9f761d040a94?w=1600&q=80",
+            image: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1600&q=80",
             title: "Discover the Magic of Africa",
             subtitle: "Experience unique wildlife adventures and create memories that last a lifetime",
             cta: "Start Your Safari"
@@ -49,7 +49,7 @@ const Hero = () => {
                     <img
                         src={slide.image}
                         alt={slide.title}
-                        className="w-full h-full object-cover scale-105"
+                        className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/40"></div>
                 </div>
