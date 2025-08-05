@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import { Mail, Send, CheckCircle, AlertCircle, Gift, Star } from 'lucide-react'
-import { cn } from '@/lib/utils'
 
 interface NewsletterSignupProps {
     variant?: 'inline' | 'modal' | 'sidebar' | 'footer'
