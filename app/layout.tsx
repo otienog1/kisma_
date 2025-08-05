@@ -43,7 +43,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" className="scroll-smooth">
-            <body className={`${inter.className} pt-8`}>
+            <body className={`${inter.className} md:pt-8`}>
                 <Navigation />
                 <main>{children}</main>
                 <Footer />
