@@ -102,7 +102,7 @@ const servicesData = {
         ],
         description: "Challenge yourself with guided climbs of Mount Kenya and Kilimanjaro. Our experienced mountain guides ensure your safety while helping you achieve your summit dreams with proper acclimatization and route planning.",
         longDescription: "Mountain climbing in East Africa offers some of the world's most rewarding and accessible high-altitude adventures. Whether you're scaling Mount Kenya's technical peaks or conquering Kilimanjaro's legendary summit, our expert guides provide the knowledge, equipment, and support needed for a successful and safe climb. We offer multiple route options to suit different skill levels and preferences, from scenic routes that maximize acclimatization to challenging paths that test your mountaineering skills.",
-        whatToExpected: [
+        whatToExpect: [
             "Comprehensive pre-climb briefing and equipment check",
             "Gradual acclimatization schedule to prevent altitude sickness",
             "Professional mountain guides certified in high-altitude rescue",
