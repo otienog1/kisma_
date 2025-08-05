@@ -130,7 +130,9 @@ const TopNav = ({ isScrolled }: TopNavProps) => {
                 <div className="flex justify-between items-center h-full uppercase text-xs tracking-wider">
                     {/* Phone Number */}
                     <div className="flex items-center space-x-2 text-white">
-                        <span className=''> Get in touch: <a href='mailto:info@kisimasafaris.com' className='underline lowercase'>info@kisimasafaris.com</a> | +254 720 909 852</span>
+                        <div className='flex space-x-2'>
+                            <span>Get in touch —</span> <Mail className="w-4 h-4" /> <a href='mailto:info@kisimasafaris.com' className='underline lowercase'>info@kisimasafaris.com</a> <span>|</span> <Phone className="w-4 h-4" /> <span>+254 720 909 852</span>
+                        </div>
                     </div>
 
                     {/* Social Media Icons */}
