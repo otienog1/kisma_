@@ -58,19 +58,21 @@ const Hero = () => {
             {/* Content */}
             <div className={`relative z-10 text-center text-white max-w-5xl mx-auto px-4 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 leading-tight">
                     {heroSlides[currentSlide].title.split(' ').map((word, index) => (
-                        <span
-                            key={index}
-                            className={`inline-block ${word === 'Magic' || word === 'Migration' || word === 'Legendary'
+                        <span key={index}>
+                            <span
+                                className={`inline-block ${word === 'Magic' || word === 'Migration' || word === 'Legendary'
                                     ? 'text-amber-400'
                                     : ''
-                                }`}
-                        >
-                            {word}{' '}
+                                    }`}
+                            >
+                                {word}
+                            </span>
+                            {index < heroSlides[currentSlide].title.split(' ').length - 1 && ' '}
                         </span>
                     ))}
-                </h1>
+                </h2>
                 <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto leading-relaxed">
                     {heroSlides[currentSlide].subtitle}
                 </p>
@@ -92,8 +94,8 @@ const Hero = () => {
                         <button
                             key={index}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                                    ? 'bg-amber-400 scale-125'
-                                    : 'bg-white/50 hover:bg-white/75'
+                                ? 'bg-amber-400 scale-125'
+                                : 'bg-white/50 hover:bg-white/75'
                                 }`}
                             onClick={() => setCurrentSlide(index)}
                             aria-label={`Go to slide ${index + 1}`}
