@@ -53,7 +53,9 @@ async function subscribeToNewsletter(email: string) {
 export async function POST(request: NextRequest) {
   try {
     const ip =
-      request.ip || request.headers.get("x-forwarded-for") || "unknown";
+      request.headers.get("x-real-ip") ||
+      request.headers.get("x-forwarded-for")?.split(",")[0] ||
+      "unknown";
 
     // Check rate limit
     if (!checkNewsletterRateLimit(ip)) {
