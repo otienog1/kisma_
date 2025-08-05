@@ -42,7 +42,7 @@ const Navigation = () => {
             <div className={`top-0 w-full transition-all duration-300 glass-effect border-b border-gray-100 py-6 ${isScrolled ? '' : ''
                 }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
+                    <div className="flex justify-between items-center h-8">
                         {/* Logo */}
                         <Link href="/" className="flex items-center">
                             <Image
@@ -50,7 +50,7 @@ const Navigation = () => {
                                 alt="Kisima Safaris"
                                 width={300}
                                 height={90}
-                                className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+                                className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
                             />
                         </Link>
 

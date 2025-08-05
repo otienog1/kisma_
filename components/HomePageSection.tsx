@@ -19,7 +19,7 @@ const HomePageSection: React.FC = () => {
                         <p className="text-lg text-gray-700 mb-8">
                             Venture into Kenya’s wild heart with seasoned guides who know the land intimately, and experience Africa the Kisima way.
                         </p>
-                        <button className="bg-amber-600 text-white font-bold py-3 px-8  hover:bg-red-700 transition duration-300">
+                        <button className="bg-amber-600 text-white font-bold py-3 px-8  hover:bg-amber-700 transition duration-300">
                             INQUIRE NOW
                         </button>
                     </div>
