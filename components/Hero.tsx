@@ -58,7 +58,7 @@ const Hero = () => {
             {/* Content */}
             <div className={`relative z-10 text-center text-white max-w-5xl mx-auto px-4 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-light mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
                     {heroSlides[currentSlide].title.split(' ').map((word, index) => (
                         <span key={index}>
                             <span

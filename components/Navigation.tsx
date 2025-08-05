@@ -125,7 +125,7 @@ interface TopNavProps {
 
 const TopNav = ({ isScrolled }: TopNavProps) => {
     return (
-        <div className={`w-full bg-[#322215] transition-all duration-300 overflow-hidden ${isScrolled ? 'h-0 py-0' : 'h-8 py-2'}`}>
+        <div className={`w-full bg-[#322215] transition-all duration-300 overflow-hidden ${isScrolled ? 'h-0 py-0' : 'h-auto py-2'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-full uppercase text-xs tracking-wider">
                     {/* Phone Number */}
